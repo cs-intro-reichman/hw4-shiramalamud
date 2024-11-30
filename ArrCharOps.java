@@ -46,11 +46,10 @@ public class ArrCharOps {
     public static boolean equals(char[] arr1, char[] arr2) 
     {
         boolean r=false;
-        for(int i=0; i<arr1.length; i++)
+        int min=Math.min(arr1.length, arr2.length);
+        for(int i=0; i<min; i++)
         {
-            for(int j=0; j<arr2.length; j++)
-            {
-                if(arr1[i]==arr2[j])
+                if(arr1[i]==arr2[i])
                 {
                     r=true;
                 }
@@ -58,7 +57,6 @@ public class ArrCharOps {
                 {
                     r=false;
                 }
-            }
         }
         return r;
     }
@@ -86,6 +84,10 @@ public class ArrCharOps {
      */
     public static int indexOf(char[] arr, char ch, int fromIndex)
      {
+        if(arr.length==0)
+        {
+            return -1;
+        }
         for(int i=fromIndex; i<arr.length; i++)
         {
             if(arr[i]==ch)
@@ -93,15 +95,9 @@ public class ArrCharOps {
                 return i;
             }
         }
-        for(int i=0; i<=fromIndex; i++)
-        {
-            if(arr[i]==ch)
-            {
-                return i;
-            }
-        }
         return -1;
-    }
+     }
+    
 
     /** Returns the index within the given arr of the last occurrence of the given character.
      *  If no such character is found, returns -1.
