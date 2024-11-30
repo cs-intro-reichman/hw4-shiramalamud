@@ -54,6 +54,10 @@ public class ArrCharOps {
                 {
                     r=true;
                 }
+                else
+                {
+                    r=false;
+                }
             }
         }
         return r;
@@ -64,6 +68,10 @@ public class ArrCharOps {
      */
     public static int indexOf(char[] arr, char ch) 
     {
+        if(arr.length==0)
+        {
+            return -1;
+        }
         for(int i=0; i<arr.length; i++)
         {
             if(arr[i]==ch)
@@ -158,7 +166,7 @@ public class ArrCharOps {
         long newhash=0;
         for(int i=0; i<arr.length; i++)
         {
-            newhash+=(int)Math.pow(arr[i]*7, arr.length-(i+1));
+            newhash+=arr[i]*(long)Math.pow(7, arr.length-i-1);
         }
         return newhash;
     }
@@ -190,7 +198,7 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) 
     {
-        if(str1==null || str2==null)
+        if(str1.length()==0||str2.length()==0)
         {
             return -2;
         }
