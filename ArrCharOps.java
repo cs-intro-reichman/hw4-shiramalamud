@@ -45,20 +45,15 @@ public class ArrCharOps {
      */
     public static boolean equals(char[] arr1, char[] arr2) 
     {
-        boolean r=false;
         int min=Math.min(arr1.length, arr2.length);
         for(int i=0; i<min; i++)
         {
-                if(arr1[i]==arr2[i])
+                if(arr1[i]!=arr2[i])
                 {
-                    r=true;
-                }
-                else
-                {
-                    r=false;
+                    return false;
                 }
         }
-        return r;
+        return true;
     }
 
     /** Returns the index within the given array of the first occurrence of the given character.
