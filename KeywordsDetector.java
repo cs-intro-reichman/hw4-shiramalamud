@@ -24,17 +24,9 @@ public class KeywordsDetector {
     {
         for(int i=0; i<sentences.length; i++)
         {
-            sentences[i]=sentences[i].toLowerCase();
-        }
-        for(int i=0; i<keywords.length; i++)
-        {
-            keywords[i]=keywords[i].toLowerCase();
-        }
-        for(int i=0; i<sentences.length; i++)
-        {
             for(int j=0; j<keywords.length; j++)
             {
-                if(containsstr(sentences[i], keywords[j]))
+                if(containsstr(sentences[i].toLowerCase(), keywords[j].toLowerCase()))
                 {
                     System.out.println(sentences[i]);
 
